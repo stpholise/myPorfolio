@@ -1,0 +1,263 @@
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    body{
+        width:100vw;
+        height:100vh;
+        color:#ddd;
+        background:linear-gradient(90deg, rgb(109, 5, 5), rgb(65, 65, 189))
+    }
+    .header{
+        width:100%;
+        height:10vh;
+        background-color:rgba(76, 6, 6, 0.8);
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:100;
+      
+    }
+    .nav{
+        width:100%;
+        height:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .nav__list{
+        display:flex;
+        gap:1rem;
+        list-style:none;
+        margin-right:2rem;
+
+    }
+    .nav__item a{
+        font-size:1.5rem;
+        font-weight:600;
+        color:rgb(255, 255, 255);
+        cursor:pointer;
+        text-decoration:none;
+    }
+    .main .showcase{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        padding: 4rem 2rem ;
+        position:relative;
+    }
+    .main .showcase .intro{
+        width:100%;
+        height:100%;
+        position:relative;
+        overflow:hidden;
+        border-radius:1rem;
+        box-shadow:5px 3px 5px rgb(104, 5, 5);
+      
+    }
+    .showcase .intro::after{
+        content:"Hello Welcome to my World";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color:rgba(0, 0, 0, 0.5);
+        z-index:5;
+        margin:auto;
+        display:flex;
+        justify-content: flex-end;
+        align-items:end;
+        font-size:3rem;
+        color:#fff;
+        transition:all  2s linear;
+         transform:translateX(400px); 
+        background: transparent;
+        animation: textAnim 10s 1s infinite linear both ;
+       
+    }
+    .showcase .intro:hover::after{
+        display:none;
+    }
+    @keyframes textAnim{
+        0%{
+            transform:translateX(600px);
+        }
+        100%{
+            transform:translateX(-700px);
+        }
+    }
+        
+    
+    .showcase .intro-text{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:absolute;
+        z-index: 10;
+        color:#000;
+        font-size:4rem;
+        margin:auto;
+        background:red;
+        color:red;;
+    }
+    .myPic{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        z-index:1;
+        position: relative;
+    }
+
+    .about{
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+        height:100%;
+        padding:1rem 2rem;
+        text-align:justify;
+        font-size:1.3rem
+    }
+    .flex2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        padding:1rem ;
+        gap:1rem;
+    }
+    .skills{
+        width:100%;
+        line-height:1.7
+    }
+.skills ul li{
+    font-size:0.8rem;
+    list-style:none;
+    margin-left: 1rem;
+
+}
+
+.myProjects{
+    text-align:center;
+}
+.pheading{
+    font-size:2.5rem;
+}
+.projectBtn{
+    padding:0.7rem 1rem;
+    box-shadow:2px 2px 2px #000;
+    border-radius:1rem 0.2rem;
+}
+.myProjects p{
+    padding:1.2rem;
+    font-size:1.2rem;
+}
+.myProjects .projects{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-rows:repeat(auto-fit, 1fr);
+    width:99%;
+   position:relative;
+    gap:1rem 0.6rem ;
+    padding:1rem;
+    display:none;
+    transition: ease-in-out 2222;
+}
+
+.projects.show{
+    display:grid;
+   
+}
+
+.absBtn{
+    position:absolute;
+    top:0;
+    right:1rem;
+    padding:0.8rem 1rem;
+    border-radius:50%;
+}
+.myProjects .projects .box{
+    background:#ccc;
+    border-radius:1rem 1rem 0.5rem 0.5rem;
+    box-shadow:2px 3px 2px #ddd;
+}
+
+.myProjects img{
+    width:100%;
+    height:90%;
+    max-height:250px;
+    border-radius:1rem 1rem 0 0;
+}
+.myProjects .projects a .text{
+    padding:0 0.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+a{
+    text-decoration:none;
+    color:#333;
+}
+a:hover{
+    color:blue
+}
+
+.footer{
+    padding:1rem;
+}
+.footer .contact{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    justify-content:center;
+}
+
+#scrollBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color:#ccc; /* Set a background color */
+    color: #333; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+
+  #myBtn:hover {
+    background-color:rgb(255, 25, 0); /* Add a dark-grey background on hover */
+  }
+@media(max-width:960px) {
+    
+    .main .showcase{
+        display:grid;
+        grid-template-columns:1fr;
+        padding: 4rem 2rem ;
+        position:relative;
+    }
+
+    
+    .showcase .intro::after{
+        font-size:2rem;
+       
+    }
+    
+.myProjects .projects{
+ 
+    grid-template-columns: 1fr;
+    grid-template-rows:repeat(auto-fit, 1fr);
+    width:99%;
+   position:relative;
+    gap:1rem 0.6rem ;
+
+    transition: ease-in-out 2222;
+}
+.projects.show{
+    display:grid;
+   
+}
+}
